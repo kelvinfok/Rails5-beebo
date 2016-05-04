@@ -14,7 +14,7 @@
                         <%= f.select :home_type, [["HDB", "HDB"], ["Condominium", "Condominium"], ["Landed", "Landed"]], id: "home_type", prompt: "Select", class: "form-control" %>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 select">
                     <div class="form-group">
                         <label>Room Type</label><br/>
                         <%= f.select :room_type, [["Studio", "Studio"], ["3 Bedrooms", "3 Bedrooms"], ["4 Bedrooms", "4 Bedrooms"], ["5 Bedrooms", "5 Bedrooms"]], id: "room_type", prompt: "Select", class: "form-control" %>
@@ -25,13 +25,13 @@
 
             <div class="row">
                 <!-- Start Row 2-->
-                <div class="col-md-4">
+                <div class="col-md-4 select">
                     <div class="form-group">
                         <label>Bed Rooms</label><br/>
                         <%= f.select :bed_room, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"]], id: "bedroom", prompt: "Select", class: "form-control" %>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 select">
                     <div class="form-group">
                         <label>Bath Rooms</label><br/>
                         <%= f.select :bath_room, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"]], id: "bathroom", prompt: "Select", class: "form-control" %>
@@ -86,17 +86,16 @@
 
             <div class="row">
                 <!-- Start Row 7-->
-                <div class="col-md-4">
-                    <div class="form-group">
+                <div class="col-md-4 select">
+                    <div class="form-group ">
                         <label>Region</label><br/>
                         <%= f.select :region, [["Central", "Central"],["North", "North"], ["South", "South"], ["East", "East"], ["West", "West"]], id: "region", prompt: "Select", class: "form-control" %>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 select">
                     <div class="form-group">
-                        <label>Freehold</label><br/>
-                        <%= f.check_box :isFreehold, id: "isfreehold" %>
-                        Freehold
+                        <label>Fee Simple</label><br/>
+                        <%= f.select :fee_simple, [["Freehold", "Freehold"],["Non-Freehold", "Non-Freehold"]], id: "fee_simple", prompt: "Select", class: "form-control" %>
                     </div>
                 </div>
             </div>

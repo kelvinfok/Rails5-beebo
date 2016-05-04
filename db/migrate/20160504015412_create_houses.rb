@@ -11,7 +11,7 @@ class CreateHouses < ActiveRecord::Migration
       t.string :address
       t.integer :price
       t.boolean :isActive
-      t.boolean :isFreehold
+      t.string :fee_simple
       t.string :region
       t.references :user, index: true, foreign_key: true
 

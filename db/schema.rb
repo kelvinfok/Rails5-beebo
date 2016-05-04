@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20160504015412) do
     t.string   "address"
     t.integer  "price"
     t.boolean  "isActive"
-    t.boolean  "isFreehold"
+    t.string   "fee_simple"
     t.string   "region"
     t.integer  "user_id"
     t.datetime "created_at",   null: false
