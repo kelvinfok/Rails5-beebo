@@ -4,7 +4,7 @@
     </div>
     <div class="panel-body">
         <div class="container">
-            <%= form_for @house do |f| %>
+            <%= form_for @house, html: {multipart: true} do |f| %>
 
             <div class="row">
                 <!-- Start Row 1 -->
@@ -78,7 +78,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>Address</label><br/>
-                        <%= f.text_field :summary, placeholder: "What is your full address?", id: "address", class: "form-control" %>
+                        <%= f.text_field :address, placeholder: "What is your full address?", id: "address", class: "form-control" %>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Active</label><br/>
-                        <%= f.check_box :isActive, id: "isactive" %>
+                        <%= f.check_box :isActive, id: "isActive" %>
                         Make listing public
                     </div>
                 </div>
@@ -126,6 +126,19 @@
                 </div>
             </div>
             <!-- End Row 9-->
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <span class="btn btn-default btn-file">
+                  <i class="fa fa-cloud-upload fa-lg"></i>Upload Photos
+                  <%= file_field_tag "images[]", type: :file, multiple: true %>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div id="photos"><%= render 'photos/list' %></div>
 
             <div class="row">
                 <!-- Start Row 10 -->
