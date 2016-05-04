@@ -26,9 +26,9 @@ class HousesController < ApplicationController
       end
 
       @photos = @house.photos
-      redirect_to edit_house_path(@house), notice: "Saved..."
+      redirect_to edit_house_path(@house), notice: "Listing Sucessfully Saved!"
     else
-      render :new
+      render :new, notice: "Something went wrong .."
     end
   end
 
