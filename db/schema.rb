@@ -18,15 +18,16 @@ ActiveRecord::Schema.define(version: 20160504015412) do
 
   create_table "houses", force: :cascade do |t|
     t.string   "home_type"
-    t.string   "room_tyoe"
-    t.integer  "accomodate"
+    t.string   "room_type"
+    t.integer  "size"
     t.integer  "bed_room"
     t.integer  "bath_room"
     t.string   "listing_name"
     t.text     "summary"
     t.string   "address"
     t.integer  "price"
-    t.boolean  "active"
+    t.boolean  "isActive"
+    t.boolean  "isFreehold"
     t.string   "region"
     t.integer  "user_id"
     t.datetime "created_at",   null: false
