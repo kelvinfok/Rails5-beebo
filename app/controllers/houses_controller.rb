@@ -26,18 +26,19 @@ class HousesController < ApplicationController
       end
 
       @photos = @house.photos
-      redirect_to edit_house_path(@house), notice: "Listing Sucessfully Saved!"
+      redirect_to edit_house_path(@house), notice: "Listing Saved!"
     else
-      render :new, notice: "Something went wrong .."
+      flash[:alert] = "Please provide all information for this house."
+      render :new
     end
   end
 
   def edit
     if current_user.id == @house.user.id
       @photos = @house.photos
-  else
-    redirect_to root_path, notice: "You don't have permission to access that."
-  end
+    else
+      redirect_to root_path, notice: "You don't have permission."
+    end
 end
 
   def update
@@ -49,9 +50,9 @@ end
         end
       end
 
-      redirect_to edit_house_path(@house), notice: "House Updated!"
-
+      redirect_to edit_house_path(@house), notice: "Updated Successfully!"
     else
+      flash[:alert] = "Please provide all information for this house."
       render :edit
     end
   end

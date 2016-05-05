@@ -29,9 +29,7 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-
                 </div>
-
                 <% end %>
             </div>
         </div>
@@ -83,18 +81,124 @@
                                 <%= number_to_currency(@house.price, :precision => 0) %>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        <br>
-                        <h3>About This Listing</h3>
+
+
+        <div class="row">
+            <!-- Summary START -->
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-3 text-center"><p>
+                      <%= render 'viewings/form' %></p>
+                    </div>
+                    <div class="col-md-9">
+                        <hr>
+                        <h3>House Summary</h3><br>
                         <p><%= @house.summary %></p>
                     </div>
-                    <!-- Col-md-9 END -->
-
                 </div>
-                <!-- Row END -->
             </div>
-            <!-- Col-md-10 END -->
         </div>
-        <!-- Row END -->
+        <!-- Summary END -->
+
+        <div class="row">
+            <!-- Detailed Information START -->
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-3 text-center"></div>
+                    <div class="col-md-9">
+                        <hr>
+                        <h3>Detailed Information</h3><br>
+                        <p>Fee Simple:
+                            <%= @house.fee_simple %></p>
+                        <p>Selling Price:
+                            <%= number_to_currency(@house.price, :precision => 0) %></p>
+                        <p>Size:
+                            <%= @house.size %>
+                            Sqft</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Detailed Information END -->
+
+        <div class="row">
+            <!-- Google Map START -->
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-3 text-center"></div>
+                    <div class="col-md-9">
+                        <hr>
+                        <h3>Map</h3><br>
+                        <div id="map"></div>
+                        <style>
+                            #map {
+                                width: 100%;
+                                height: 400px;
+                            }
+                        </style>
+                        <script>
+                            function initMap() {
+                                var mapDiv = document.getElementById('map');
+                                var map = new google.maps.Map(mapDiv, {
+                                    center: {
+                                        lat: <%= @house.latitude %>,
+                                        lng: <%= @house.longitude %>
+                                    },
+                                    zoom: 14
+                                });
+
+                                var marker = new google.maps.Marker({
+                                  position: new google.maps.LatLng(<%= @house.latitude %>, <%= @house.longitude %>),
+                                  title: "Approximate Location"
+                                });
+                                marker.setMap(map);
+                            }
+                        </script>
+                        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+                    </div>
+                    <!-- Google Map END -->
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- Google Map END -->
+
+    <div class="row">
+        <!-- Nearby Houses START -->
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-3 text-center"></div>
+                <div class="col-md-9">
+                    <hr>
+                    <h3>Houses Around This Area</h3><br>
+
+                      <% for house in @house.nearbys(10) %>
+                      <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading preview">
+                <%= image_tag house.photos[0].image.url(:medium) if house.photos[0] %>
+              </div>
+              <div class="panel-body">
+                <%= link_to house.listing_name, house %><br>
+                (<%= house.distance.round(2) %> Kilometres away)
+
+              </div>
+              </div>
+            </div>
+
+<% end %>
+                </div>
+            </div>
+        </div>
+      </div>
+    <!-- Nearby Houses END -->
+
+
+    <!-- Row END -->
+</div>
 </div>

@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   resources :houses
   resources :photos
 
+  resources :houses do
+    resources :viewings, only: [:create]
+  end
+
+  get '/your_viewings' => 'viewings#your_viewings'
+
 end
