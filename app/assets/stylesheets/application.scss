@@ -42,6 +42,12 @@ body {
   margin-top: 10px;
 }
 
+.btn-primary.btn {
+  border-radius: 2px;
+  font-weight: bold;
+  padding: 10px 25px 10px 25px;
+}
+
 .panel-default .panel-heading {
   color: #565a5c;
   background-color: #edefed;
@@ -220,4 +226,20 @@ input[type="checkbox"]:checked:before {
 
 .resources-text {
   line-height: 1.430;
+}
+
+#article {
+  width: 560px;
+}
+
+.discovery-card {
+  background-size: cover;
+  background-position: center;
+}
+
+.search-input, .search-input[placeholder]{
+    text-align:center;
+    height: 70px;
+    font-size: 4.5rem;
+    color: #FF5A5F;
 }
