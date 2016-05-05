@@ -1,23 +1,38 @@
 <div class="row">
 
-<div class="col-md-3">
-  <div class="center">
-    <%= image_tag avatar_url(@user), class: "avatar-full" %>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">Verification</div>
-    <div class="panel-body">
-      Email Address<br>
-      Mobile Number
+    <div class="col-md-3">
+        <div class="center">
+            <%= image_tag avatar_url(@user), class: "avatar-full" %>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Verification</div>
+            <div class="panel-body">
+                Email Address<br>
+                Mobile Number
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
+    <div class="col-md-9">
+        <h2><%= @user.fullname %></h2>
+        <div class="description row-space-3">
+            <%= @user.description %>
+        </div>
 
-<div class="col-md-9">
-  <h2><%= @user.fullname %></h2>
-  <div class="description row-space-3">
-    <%= @user.description %>
-  </div>
-</div>
+        <h4>Listings (<%= @houses.length %>)</h4><br>
+        <div class="row">
+            <% @houses.each do |house| %>
+            <div class="col-md-4">
+                <div class="panel panel-default"></div>
+                <div class="panel-heading preview">
+                    <%= image_tag house.show_first_photo(:medium) %>
+                </div>
+                <div class="panel-body">
+                    <%= link_to house.listing_name, house_path(house) %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+
+    </div>
 </div>
