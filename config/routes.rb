@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     resources :viewings, only: [:create]
   end
 
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
+
   get '/your_viewings' => 'viewings#your_viewings'
 
 end
