@@ -22,4 +22,7 @@ Rails.application.routes.draw do
 
   get '/your_viewings' => 'viewings#your_viewings'
 
+  get '/resources' => 'pages#resources'
+  get '/search' => 'pages#search'
+
 end

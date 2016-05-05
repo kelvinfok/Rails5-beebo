@@ -188,7 +188,6 @@ input[type="checkbox"]:checked:before {
 
 .panel-heading.preview img{
   width: 100%;
-  max-height: 200px;
 }
 
 .img-responsive {
@@ -216,4 +215,9 @@ input[type="checkbox"]:checked:before {
 
 .wide {
   width: 100%;
+  vertical-align: middle;
+}
+
+.resources-text {
+  line-height: 1.430;
 }
