@@ -37,14 +37,14 @@
         <br>
         <!-- Main Info -->
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-11">
                 <div class="row">
-                    <div class="col-md-3 text-center">
+                    <div class="col-md-4 text-center">
                         <br>
                         <%= image_tag avatar_url(@house.user), class: "img-circle avatar-large" %><br><br>
-                        <%= @house.user.fullname %>
+                        <%= link_to @house.user.fullname, @house.user %>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <!-- Col-md-9 START -->
                         <h3><%= @house.listing_name %></h3>
                         <%= @house.address %>
@@ -90,12 +90,12 @@
 
         <div class="row">
             <!-- Summary START -->
-            <div class="col-md-10">
+            <div class="col-md-11">
                 <div class="row">
-                    <div class="col-md-3 text-center"><p>
+                    <div class="col-md-4 text-center"><p>
                       <%= render 'viewings/form' %></p>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <hr>
                         <h3>House Summary</h3><br>
                         <p><%= @house.summary %></p>
@@ -107,10 +107,10 @@
 
         <div class="row">
             <!-- Detailed Information START -->
-            <div class="col-md-10">
+            <div class="col-md-11">
                 <div class="row">
-                    <div class="col-md-3 text-center"></div>
-                    <div class="col-md-9">
+                    <div class="col-md-4 text-center"></div>
+                    <div class="col-md-8">
                         <hr>
                         <h3>Detailed Information</h3><br>
                         <p>Fee Simple:
@@ -128,10 +128,10 @@
 
         <div class="row">
             <!-- Google Map START -->
-            <div class="col-md-10">
+            <div class="col-md-11">
                 <div class="row">
-                    <div class="col-md-3 text-center"></div>
-                    <div class="col-md-9">
+                    <div class="col-md-4 text-center"></div>
+                    <div class="col-md-8">
                         <hr>
                         <h3>Map</h3><br>
                         <div id="map"></div>
@@ -170,10 +170,10 @@
 
     <div class="row">
         <!-- Nearby Houses START -->
-        <div class="col-md-10">
+        <div class="col-md-11">
             <div class="row">
-                <div class="col-md-3 text-center"></div>
-                <div class="col-md-9">
+                <div class="col-md-4 text-center"></div>
+                <div class="col-md-8">
                     <hr>
                     <h3>Houses Around This Area</h3><br>
 

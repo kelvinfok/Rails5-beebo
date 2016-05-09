@@ -36,7 +36,7 @@
   <% @houses.each do |house| %>
   <div class="col-md-4">
     <div class="panel panel-default">
-      <div class="panel-heading preview">
+      <div class="panel-heading preview preview-index">
         <%= image_tag house.photos[0].image.url(:medium) if house.photos.length > 0 %>
       </div>
       <div class="panel-body">

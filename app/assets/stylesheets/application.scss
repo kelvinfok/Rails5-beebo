@@ -196,6 +196,11 @@ input[type="checkbox"]:checked:before {
   width: 100%;
 }
 
+.panel-heading.preview-index img{
+  width: 100%;
+  height: 200px;
+}
+
 .img-responsive {
   margin: 0 auto;
 }
@@ -242,4 +247,8 @@ input[type="checkbox"]:checked:before {
     height: 70px;
     font-size: 4.5rem;
     color: #FF5A5F;
+}
+
+.panel-control {
+  font-size: 7px;
 }
